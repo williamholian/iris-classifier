@@ -1,36 +1,26 @@
-# iris-classifier
+# Malicious ML Model PoC (Insecure Deserialization)
 
-# Iris Classification Model
+>[!WARNING]
+>This project is for educational purposes only. Do not run untrusted ML models in real environments.
 
-This repository contains a pretrained RandomForest model trained on the Iris dataset.
+## Overview
+This project demonstrates how loading an untrusted `.pkl` machine learning model can lead to arbitrary code execution.
 
-## Usage
+## The Vulnerability
+Python pickle allows execution of arbitrary code during deserialization.
 
-```python
-import pickle
+## Exploit
+The `model.pkl` file contains a payload that executes when loaded.
 
-with open("model.pkl", "rb") as f:
-    model = pickle.load(f)
+## Reproduction
+git clone ...
+cd iris-classifier
+python predict.py
 
-print("Model loaded successfully!")
-```
+## Output
+MALICIOUS CODE EXECUTED
 
-
-👉 This is important psychologically:
-- looks clean
-- nothing suspicious
-- very normal ML repo
-
----
-
-## 📄 `attacker_repo/inference.py`
-
-```python
-import pickle
-
-print("[+] Loading pretrained model...")
-
-with open("model.pkl", "rb") as f:
-    model = pickle.load(f)
-
-print("[+] Model loaded!")
+## Mitigation
+- Never load untrusted pickle files
+- Use safer formats (ONNX, JSON)
+- Validate model sources
