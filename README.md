@@ -27,11 +27,11 @@ python predict.py
 
 That's it! The script will automatically load the pretrained model and run inference.
 
-## 📦 Files Included
+## Files Included
 - `model.pkl` – pretrained classification model
 - `predict.py` – inference script
 
-## 🧠 Notes
+## Notes
 This project is intended for educational and prototyping purposes. The model is lightweight and designed to run locally without GPU support.
 
 Feel free to fork and experiment!
