@@ -1,4 +1,4 @@
-# pickle_poc
+# iris-classifier
 
 # Iris Classification Model
 
